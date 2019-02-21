@@ -1,0 +1,23 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: rest-server
+
+eureka:
+  client:
+    service-url:
+      defaultzone: http://localhost:8671/eureka
+  instance:
+    prefer-ip-address: true
+
+app:
+  id: ${random.uuid}
+
+weatherApi:
+  apiKey: ${"c478384e412c63529711f246ef95def0"}
+  apiUrl: ${"http://api.openweathermap.org/data/2.5/weather"}
+
+weatherCityId:
+  saintLouis: ${"4407066"}

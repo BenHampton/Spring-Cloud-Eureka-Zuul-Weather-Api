@@ -1,0 +1,25 @@
+# Spring Boot supports application.properties
+# as wek as application.yml
+
+server:
+  port: 8762
+
+spring:
+  application:
+    name: zuul-server
+
+eureka:
+  instance:
+    prefer-ip-address: true #Prefer to use Ip Address to communicate to all the microservices instead of using HostNames
+  client:
+    register-with-eureka: true #True, Yes we want to register this microservice against a Eureka Service
+    fetch-registry: true  #True, Yes fetch a complete list of all the microservices available
+    service-url:
+      defaultzone: http://localhost:8761/eureka/
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
